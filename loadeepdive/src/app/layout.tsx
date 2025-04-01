@@ -1,4 +1,4 @@
-import Navigation from "./components/home/navigation";
+import Navigation from "./components/navigation/navigation";
 
 export const metadata = {
   title: "LostArk Deep Dive",
