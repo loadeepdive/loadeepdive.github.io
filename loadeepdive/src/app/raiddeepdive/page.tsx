@@ -7,7 +7,7 @@ export default function raiddeepdivePage(){
         <div>
             <Bookmark></Bookmark>
             <Categoty></Categoty>
-            <Articles></Articles>
+            <Articles pathName="raiddeepdive"></Articles>
         </div>
     )
 }
