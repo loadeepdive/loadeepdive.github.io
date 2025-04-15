@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import {markdownToMap} from '../../customFunction/markdownParsing'
+// import {markdownToMap} from '../../customFunction/markdownParsing'
 
 export default async function Articles({pathName}:{pathName:string}) {
     // 폴더 읽어오기
@@ -10,8 +10,8 @@ export default async function Articles({pathName}:{pathName:string}) {
     } catch (err) {
       console.error('폴더 읽기 실패:', err);
     }
-    const test = markdownToMap('./documents/raid/test.md')
-    console.log(test)
+    // const test = markdownToMap('./documents/raid/test.md')
+    // console.log(test)
     // return
     return (
       <div>
