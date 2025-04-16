@@ -1,5 +1,6 @@
 import * as React from 'react';
 import fs from 'fs';
+import path from 'path';
 import { markdownToMap } from '@/app/customFunction/markdownParsing';
 
 export default function RaidArticleDetail({params,}: {params: Promise<{ id: string }>;}) {
@@ -27,3 +28,13 @@ export default function RaidArticleDetail({params,}: {params: Promise<{ id: stri
     </div>
 );
 }
+
+export async function generateStaticParams(): Promise<Array<{ id: string }>> {
+  
+    const articleNoteFilePath = path.join(process.cwd(), 'documents/raid/articleIdNote.md');
+    const articleNote = fs.readFileSync(articleNoteFilePath, 'utf-8')
+      .split('\n')
+      .map((line: string) => line.split(':')[0]);
+  
+    return articleNote.map((id: string) => ({ id }));
+  }
