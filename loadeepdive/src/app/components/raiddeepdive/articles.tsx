@@ -19,7 +19,7 @@ export default async function Articles({pathName}:{pathName:string}) {
         <div>아티클스</div>
         <ul>
         {articleArray.length > 0 ? (
-          articleArray.map((article) => <li key={article}>{article}</li>)
+          articleArray.map((article) => <li key={article}>{article} </li>)
         ) : (
           <li>죄송합니다. 글을 찾지 못했습니다</li>
         )}
