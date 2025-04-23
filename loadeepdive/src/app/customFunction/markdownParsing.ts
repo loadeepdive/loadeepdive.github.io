@@ -1,8 +1,5 @@
-// import fs from 'fs';
-
 export function markdownToMap(origin_file:string):Map<string,string>{
     const codeBlock = origin_file.match(/```([\s\S]*?)```/);
-    // 코드블럭으로 감싼 정보 처리
     const data = codeBlock?codeBlock[0]:'```\n```';
     const dataArr = data.split('\n').map((data)=>data.split(':'))
     const dataMap = new Map();
@@ -10,9 +7,6 @@ export function markdownToMap(origin_file:string):Map<string,string>{
         if (dataArr[i].length != 2) continue
         dataMap.set(dataArr[i][0],dataArr[i][1])
     }
-    // 본문
-    // const body = parseBodyMarkdown(origin_file.replace(codeBlock?codeBlock[0]:'','').trim().split('\n'))
-    // dataMap.set('bodyData',body)
     return dataMap
 }
 
@@ -22,7 +16,6 @@ export type Section = {
     details?: Section[];
 };
   
-// export const parseBodyMarkdown = (lines: string[])=>{
 export const parseBodyMarkdown = (origin_file: string)=>{
     const codeBlock = origin_file.match(/```([\s\S]*?)```/);
     const lines = origin_file.replace(codeBlock?codeBlock[0]:'','').trim().split('\n')
