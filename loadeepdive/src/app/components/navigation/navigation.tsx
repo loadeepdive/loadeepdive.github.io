@@ -1,18 +1,18 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from '@mui/material';
+
+
+
 export default function Navigation(){
-    const path = usePathname();
-    // console.log(path)
+    const path = usePathname().split('/');
+    console.log(path);
     return (
     <nav>
         <ul>
-            <li>
-                <Link href="/">Home</Link> {path === "/"?"🔥":""}
-            </li>
-            <li>
-                <Link href="/raiddeepdive">Raid Deep Dive</Link> {path === "/raiddeepdive"?"🔥":""}
-            </li>
+            {path[1]=== ""?<Button href="/" variant="contained">Home</Button>:<Button href="/" variant="outlined">Home</Button>}
+            {path[1]=== "raiddeepdive"?<Button href="/raiddeepdive" variant="contained">Raid Deep Dive</Button>:<Button href="/raiddeepdive" variant="outlined">Raid Deep Dive</Button>}
         </ul>
     </nav>
         );
