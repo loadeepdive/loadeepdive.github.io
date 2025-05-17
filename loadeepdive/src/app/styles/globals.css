@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #F0FFFF;
+}
+
+.contentBox {
+  /* border: 5px; */
+  outline: 2px solid red;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  /* background-color: #1E90FF; */
+}
