@@ -1,9 +1,17 @@
 // const isGithubPages = process.env.DEPLOY_ENV === 'GH_PAGES';
 
+// const nextConfig = {
+//   output: 'export',
+//   // basePath: isGithubPages ? '' : '',
+//   // assetPrefix: isGithubPages ? '' : '',
+// };
+
+// export default nextConfig;
+
+// next.config.js
 const nextConfig = {
   output: 'export',
-  // basePath: isGithubPages ? '' : '',
-  // assetPrefix: isGithubPages ? '' : '',
+  basePath: '/loadeepdive',
 };
 
-export default nextConfig;
+module.exports = nextConfig;
